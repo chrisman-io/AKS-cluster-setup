@@ -15,7 +15,7 @@ This guide summerizes the installation steps in the [Calico Enterprise](https://
 
 1. Configure a storage class
 The following configuration provisions a storage class and Calico Enterprise to use LRS disks for log storage
-```
+```yaml
 kubectl apply -f - <<EOF
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -74,7 +74,7 @@ Network policies are configured to secure the Calico platform. This creates a Ne
 kubectl create -f https://docs.tigera.io/manifests/tigera-policies-managed.yaml
 ```
 8. The Tigera Manager web UI by default in not accessible from outside the K8s cluster. Deploying a Load Balancer resource enables AKS to provision an Azure loadbalancer with a Public IP
-```
+```yaml
 # Enabling AKS to deploy an Azure loadbalancer
 kubectl apply -f - <<EOF
 kind: Service
